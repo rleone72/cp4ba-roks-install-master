@@ -1,0 +1,1 @@
+oc create secret generic oc-cluster-ssl-secret --from-file=tls.crt="occlustercert.pem"

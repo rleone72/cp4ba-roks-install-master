@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: icn-access-log
+data:
+  liberty_access_log.xml: |-
+    <server>
+    <httpEndpoint id="defaultHttpEndpoint">
+        <accessLogging logFormat='%h %i %u %t %D "%r" %s %b' filepath="${server.output.dir}/logs/${hostname}/http_access.log" maxFileSize="1" maxFiles="2" />
+    </httpEndpoint>
+    </server>

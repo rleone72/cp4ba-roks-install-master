@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: case-manager-tracing-log
+  namespace: estv-fnsap-cp4ba-a
+data:
+  liberty_acase_manager_tracing.xml: |-
+    <server>
+        <logging consoleLogLevel="{{`{{ .Values.icn.log.loggingLevel }}`}}" traceSpecification="{{`{{ .Values.icn.log.traceSpecificationgLevel }}`}}" messageFileName="CaseManagerTrace.log" messageFileSize="20MB" />
+    </server>

@@ -1,0 +1,50 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: cpe-mtom-route
+  # namespace:
+spec:
+  host: mtom-fnsap-a.apps.p-szb-ros-estv-npr-02.cloud.admin.ch
+  to:
+    kind: Service
+    name: icp4adeploy-cpe-svc
+    weight: 100
+  port:
+    targetPort: https
+  tls:
+    termination: reencrypt
+    destinationCACertificate: |-
+      -----BEGIN CERTIFICATE-----
+      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
+      -----END CERTIFICATE-----
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
